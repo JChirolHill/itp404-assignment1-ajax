@@ -48,27 +48,27 @@ function renderResult(result) {
     container.append(resultOverlay);
     fragment.append(container);
   });
-  
+
   $('.loader').css('display', 'none');
   $('#results').html(fragment);
 }
 
 $(document).ready(function() {
   $('#redditForm').submit(function() {
+    $('#error').css('display', 'none');
     $('.loader').css('display', 'block');
     let subreddit = $(this).find('input[name="subreddit"]').val();
 
     $.ajax({
       method: 'GET',
       url: 'https://www.reddit.com/r/' + subreddit + '.json'
-    }).done(function(result) {
+    }).then(function(result) {
       console.log(result)
       renderResult(result.data.children);
     }).fail(function() {
-      console.log('Ajax fail')
-      $('#results').html('Darn, there are no results for your search, try again')
+      $('#error').css('display', 'block');
+      $('.loader').css('display', 'none');
     });
-
 
     return false;
   });
