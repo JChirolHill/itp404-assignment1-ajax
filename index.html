@@ -1,1 +1,28 @@
-hi
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Reddit Search</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Livvic|Comfortaa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="title">
+        <i class="fab fa-reddit-alien"></i>
+        Reddit Finder
+      </div>
+      <form id="redditForm">
+        <input type="text" name="subreddit" placeholder="Enter a topic...">
+        <button type="submit">Go!</button>
+      </form>
+    </div>
+
+    <div class="loader">Loading...</div>
+    <div id="results"></div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
