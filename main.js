@@ -67,6 +67,7 @@ $(document).ready(function() {
       renderResult(result.data.children);
     }).fail(function() {
       $('#error').css('display', 'block');
+      $('#results').html('');
       $('.loader').css('display', 'none');
     });
 
